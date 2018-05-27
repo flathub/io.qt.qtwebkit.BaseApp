@@ -5,6 +5,12 @@
   "sdk": "org.kde.Sdk",
   "runtime-version": "5.9",
   "separate-locales": false,
+  "cleanup": [
+    "/include",
+    "/lib/cmake",
+    "/lib/mkspecs",
+    "/lib/pkgconfig"
+  ],
   "modules": [
     {
       "name": "qtwebkit",
