@@ -1,9 +1,8 @@
 {
   "id": "io.qt.qtwebkit.BaseApp",
-  "branch": "stable",
   "runtime": "org.kde.Platform",
   "sdk": "org.kde.Sdk",
-  "runtime-version": "5.9",
+  "runtime-version": "5.11",
   "separate-locales": false,
   "modules": [
     {
