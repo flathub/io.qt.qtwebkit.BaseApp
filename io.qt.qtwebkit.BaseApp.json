@@ -22,6 +22,30 @@
           "type": "archive",
           "url": "https://github.com/qt/qtwebkit/archive/v5.212.0-alpha2.tar.gz",
           "sha256": "6db43b931f64857cfda7bcf89914e2730b82164871a8c24c1881620e6bfdeca1"
+        },
+        {
+          "type": "patch",
+          "path": "patches/detect_opengl_es2.diff"
+        },
+        {
+          "type": "patch",
+          "path": "patches/fix_copyChars_segfault.diff"
+        },
+        {
+          "type": "patch",
+          "path": "patches/fix_ftbfs_alpha.diff"
+        },
+        {
+          "type": "patch",
+          "path": "patches/fix_ftbfs_x32.diff"
+        },
+        {
+          "type": "patch",
+          "path": "patches/fix_selectedHtml_segfault.diff"
+        },
+        {
+          "type": "patch",
+          "path": "patches/fix-trojita-plaintext.patch"
         }
       ]
     }

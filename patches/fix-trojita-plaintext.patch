@@ -1,0 +1,33 @@
+Description: Fix plaintext Trojitá emails
+ Without this patch, plaintext emails in Trojitá are displayed line by line.
+ Original patch descriptions:
+ There are problems with QGLWidget based web plugins due to the fact
+ that WebKit forces us to relayout during paint events, which in turn
+ might resize widgets, causing the shared backing store's QImages to
+ be corrupted and hence causing crashed.
+ .
+ This patch triggers a layout upon resizing the FrameView, which reduces
+ the likely hood of resizing plugins during a subsequent paintEvent.
+ .
+ Additional note for 451c5a10 + this:
+ .
+ Since r162515 resize of FrameView that does not have scrollbars (or use
+ overlay scrollbars) does not lead to automatic re-layout. In Trojita
+ contentsSize() is called immediately after QWebPage::setViewportSize(),
+ returning wrong result.
+Author: Konstantin Tokarev <annulen@yandex.ru>
+Origin: upstream
+Bug: https://github.com/annulen/webkit/issues/511
+Applied-Upstream: commit:6faf112, commit:7642045
+Last-Update: 2018-10-11
+--- a/Source/WebKit/qt/WebCoreSupport/QWebFrameAdapter.cpp
++++ b/Source/WebKit/qt/WebCoreSupport/QWebFrameAdapter.cpp
+@@ -961,6 +961,8 @@ void QWebFrameAdapter::setViewportSize(c
+     FrameView* view = frame->view();
+     ASSERT(view);
+     view->resize(size);
++    if (view->needsLayout())
++        view->layout();
+     view->adjustViewSize();
+ }
+ 
