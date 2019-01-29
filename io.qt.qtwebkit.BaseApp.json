@@ -41,6 +41,10 @@
         },
         {
           "type": "patch",
+          "path": "patches/fix_i386_detection.patch"
+        },
+        {
+          "type": "patch",
           "path": "patches/fix_selectedHtml_segfault.diff"
         },
         {
