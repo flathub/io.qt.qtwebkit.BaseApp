@@ -1,4 +1,4 @@
 {
   "skip-appstream-check": true,
-  "end-of-life": "The stable branch is no longer maintained, dependent applications should use specific KDE runtime versions as branch instead (such as 5.9 or 5.11)"
+  "only-arches": ["aarch64", "x86_64"]
 }
