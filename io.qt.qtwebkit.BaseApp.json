@@ -14,6 +14,18 @@
         "-DCMAKE_INSTALL_LIBDIR=lib",
         "-DPORT=Qt"
       ],
+      "build-options" : {
+        "arch" : {
+          "arm" : {
+            "config-opts" : [
+              "-DCMAKE_BUILD_TYPE=Release",
+              "-DCMAKE_INSTALL_LIBDIR=lib",
+              "-DENABLE_ALLINONE_BUILD=OFF",
+              "-DPORT=Qt"
+            ]
+          }
+        }
+      },
       "post-install": [
         "mv /app/mkspecs /app/lib"
       ],
@@ -41,15 +53,19 @@
         },
         {
           "type": "patch",
-          "path": "patches/fix_i386_detection.patch"
-        },
-        {
-          "type": "patch",
           "path": "patches/fix_selectedHtml_segfault.diff"
         },
         {
           "type": "patch",
           "path": "patches/fix-trojita-plaintext.patch"
+        },
+        {
+          "type": "shell",
+          "only-arches": ["i386"],
+          "commands": [
+            "find Source/ -name '*.cpp' -o -name '*.c' -o -name '*.h' -exec sed -i -e 's|JSC_HOST_CALL|__attribute__((fastcall))|g' {} \\;",
+            "find Source/ -name '*.cpp' -o -name '*.c' -o -name '*.h' -exec sed -i -e 's|#define __attribute__((fastcall))|#define JSC_HOST_CALL|g' {} \\;"
+          ]
         }
       ]
     }
