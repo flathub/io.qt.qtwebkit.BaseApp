@@ -16,10 +16,11 @@
       ],
       "build-options" : {
         "arch" : {
-          "arm" : {
+          "i386" : {
             "config-opts" : [
               "-DCMAKE_BUILD_TYPE=Release",
               "-DCMAKE_INSTALL_LIBDIR=lib",
+              "-DCMAKE_CXX_FLAGS=\"-fpermissive\"",
               "-DENABLE_ALLINONE_BUILD=OFF",
               "-DPORT=Qt"
             ]
@@ -58,14 +59,6 @@
         {
           "type": "patch",
           "path": "patches/fix-trojita-plaintext.patch"
-        },
-        {
-          "type": "shell",
-          "only-arches": ["i386"],
-          "commands": [
-            "find Source/ -name '*.cpp' -o -name '*.c' -o -name '*.h' -exec sed -i -e 's|JSC_HOST_CALL|__attribute__((fastcall))|g' {} \\;",
-            "find Source/ -name '*.cpp' -o -name '*.c' -o -name '*.h' -exec sed -i -e 's|#define __attribute__((fastcall))|#define JSC_HOST_CALL|g' {} \\;"
-          ]
         }
       ]
     }
