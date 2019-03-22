@@ -14,19 +14,6 @@
         "-DCMAKE_INSTALL_LIBDIR=lib",
         "-DPORT=Qt"
       ],
-      "build-options" : {
-        "arch" : {
-          "i386" : {
-            "config-opts" : [
-              "-DCMAKE_BUILD_TYPE=Release",
-              "-DCMAKE_INSTALL_LIBDIR=lib",
-              "-DCMAKE_CXX_FLAGS=\"-fpermissive\"",
-              "-DENABLE_ALLINONE_BUILD=OFF",
-              "-DPORT=Qt"
-            ]
-          }
-        }
-      },
       "post-install": [
         "mv /app/mkspecs /app/lib"
       ],
@@ -59,6 +46,10 @@
         {
           "type": "patch",
           "path": "patches/fix-trojita-plaintext.patch"
+        },
+        {
+          "type": "patch",
+          "path": "patches/fix_i386_build.diff"
         }
       ]
     }
