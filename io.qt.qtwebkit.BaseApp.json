@@ -50,6 +50,10 @@
         {
           "type": "patch",
           "path": "patches/fix_i386_build.diff"
+        },
+        {
+          "type": "patch",
+          "path": "patches/reduce_linker_memory_usage.diff"
         }
       ]
     }
