@@ -50,11 +50,6 @@
         {
           "type": "patch",
           "path": "patches/fix_i386_build.diff"
-        },
-        {
-          "type": "patch",
-          "path": "patches/disable_gold_linker.diff",
-          "only-arches": ["i386", "arm"]
         }
       ]
     }
