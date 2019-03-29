@@ -53,7 +53,8 @@
         },
         {
           "type": "patch",
-          "path": "patches/reduce_linker_memory_usage.diff"
+          "path": "patches/reduce_linker_memory_usage.diff",
+          "only-arches": ["i386", "arm"]
         }
       ]
     }
