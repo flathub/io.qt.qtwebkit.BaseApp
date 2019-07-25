@@ -12,7 +12,9 @@
       "config-opts": [
         "-DCMAKE_BUILD_TYPE=Release",
         "-DCMAKE_INSTALL_LIBDIR=lib",
-        "-DPORT=Qt"
+        "-DPORT=Qt",
+        "-DUSE_SYSTEM_MALLOC=ON",
+        "-DENABLE_JIT=OFF"
       ],
       "post-install": [
         "mv /app/mkspecs /app/lib"
@@ -26,6 +28,14 @@
         {
           "type": "patch",
           "path": "patches/reduce_linker_memory_use.patch"
+        },
+        {
+          "type": "patch",
+          "path": "patches/path_max.diff"
+        },
+        {
+          "type": "patch",
+          "path": "patches/reduce_exports.diff"
         }
       ]
     }
