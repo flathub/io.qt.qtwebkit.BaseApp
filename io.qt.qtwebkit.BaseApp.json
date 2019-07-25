@@ -22,6 +22,10 @@
           "type": "archive",
           "url": "https://github.com/qtwebkit/qtwebkit/releases/download/qtwebkit-5.212.0-alpha3/qtwebkit-5.212.0-alpha3.tar.xz",
           "sha256": "357eee582445574472e410ebece632d06fa0ec94358fc4345f2a713922df5e17"
+        },
+        {
+          "type": "patch",
+          "path": "patches/reduce_linker_memory_use.patch"
         }
       ]
     }
