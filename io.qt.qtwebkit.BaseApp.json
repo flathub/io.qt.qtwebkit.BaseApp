@@ -14,7 +14,8 @@
         "-DCMAKE_INSTALL_LIBDIR=lib",
         "-DPORT=Qt",
         "-DUSE_SYSTEM_MALLOC=ON",
-        "-DENABLE_JIT=OFF"
+        "-DENABLE_JIT=OFF",
+        "-DENABLE_API_TESTS=OFF"
       ],
       "post-install": [
         "mv /app/mkspecs /app/lib"
