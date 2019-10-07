@@ -15,7 +15,8 @@
         "-DPORT=Qt",
         "-DUSE_SYSTEM_MALLOC=ON",
         "-DENABLE_JIT=OFF",
-        "-DENABLE_API_TESTS=OFF"
+        "-DENABLE_API_TESTS=OFF",
+        "-DENABLE_ALLINONE_BUILD=OFF"
       ],
       "post-install": [
         "mv /app/mkspecs /app/lib"
