@@ -6,31 +6,6 @@
   "separate-locales": false,
   "modules": [
     {
-      "name": "python-2.7",
-      "config-opts": [
-        "--enable-shared",
-        "--with-ensurepip=yes",
-        "--with-system-expat",
-        "--with-system-ffi",
-        "--enable-loadable-sqlite-extensions",
-        "--with-dbmliborder=gdbm",
-        "--enable-unicode=ucs4"
-      ],
-      "post-install": [
-        "chmod 644 $FLATPAK_DEST/lib/libpython2.7.so.1.0"
-      ],
-      "cleanup": [
-        "*"
-      ],
-      "sources": [
-        {
-          "type": "archive",
-          "url": "https://www.python.org/ftp/python/2.7.16/Python-2.7.16.tgz",
-          "sha256": "01da813a3600876f03f46db11cc5c408175e99f03af2ba942ef324389a83bad5"
-        }
-      ]
-    },
-    {
       "name": "qtwebkit",
       "buildsystem": "cmake-ninja",
       "builddir": true,
@@ -45,8 +20,8 @@
       "sources": [
         {
           "type": "archive",
-          "url": "https://github.com/qt/qtwebkit/archive/v5.212.0-alpha4.tar.gz",
-          "sha256": "6bc13fd93e3c2a1f20c2e923fc433d899942522fb09837ca2613a9686dca1bd8"
+          "url": "https://github.com/qtwebkit/qtwebkit/releases/download/qtwebkit-5.212.0-alpha4/qtwebkit-5.212.0-alpha4.tar.xz",
+          "sha256": "9ca126da9273664dd23a3ccd0c9bebceb7bb534bddd743db31caf6a5a6d4a9e6"
         }
       ]
     }
