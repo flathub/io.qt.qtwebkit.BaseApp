@@ -45,36 +45,8 @@
       "sources": [
         {
           "type": "archive",
-          "url": "https://github.com/qt/qtwebkit/archive/v5.212.0-alpha2.tar.gz",
-          "sha256": "6db43b931f64857cfda7bcf89914e2730b82164871a8c24c1881620e6bfdeca1"
-        },
-        {
-          "type": "patch",
-          "path": "patches/detect_opengl_es2.diff"
-        },
-        {
-          "type": "patch",
-          "path": "patches/fix_copyChars_segfault.diff"
-        },
-        {
-          "type": "patch",
-          "path": "patches/fix_ftbfs_alpha.diff"
-        },
-        {
-          "type": "patch",
-          "path": "patches/fix_ftbfs_x32.diff"
-        },
-        {
-          "type": "patch",
-          "path": "patches/fix_i386_detection.patch"
-        },
-        {
-          "type": "patch",
-          "path": "patches/fix_selectedHtml_segfault.diff"
-        },
-        {
-          "type": "patch",
-          "path": "patches/fix-trojita-plaintext.patch"
+          "url": "https://github.com/qt/qtwebkit/archive/v5.212.0-alpha4.tar.gz",
+          "sha256": "6bc13fd93e3c2a1f20c2e923fc433d899942522fb09837ca2613a9686dca1bd8"
         }
       ]
     }
