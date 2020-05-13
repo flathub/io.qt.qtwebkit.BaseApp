@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component>
+  <id>io.qt.qtwebkit.BaseApp</id>
+  <metadata_license>CC0</metadata_license>
+  <project_license> LGPL-2.1-only</project_license>
+  <name>QtWebKit BaseApp</name>
+  <summary>Shared platform for applications that use QtWebKit</summary>
+  <url type="homepage">https://github.com/qtwebkit/qtwebkit</url>
+  <project_group>KDE</project_group>
+</component>

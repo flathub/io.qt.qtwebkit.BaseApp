@@ -15,9 +15,28 @@
         "-DPORT=Qt"
       ],
       "post-install": [
-        "mv /app/mkspecs /app/lib"
+        "mv /app/mkspecs /app/lib",
+        "install -Dm644 ../io.qt.qtwebkit.BaseApp.metainfo.xml -t /app/share/metainfo",
+        "install ../cleanup-BaseApp.sh -t /app"
       ],
       "sources": [
+        {
+          "type": "file",
+          "path": "io.qt.qtwebkit.BaseApp.metainfo.xml"
+        },
+        {
+          "type": "script",
+          "dest-filename": "cleanup-BaseApp.sh",
+          "//": "https://github.com/flatpak/flatpak-builder/issues/233",
+          "commands": [
+            "rm -rfv /app/include",
+            "rm -rfv /app/lib/cmake",
+            "rm -rfv /app/lib/mkspecs",
+            "rm -rfv /app/lib/pkgconfig",
+            "rm -rfv /app/share/{metainfo,appdata}/io.qt.qtwebkit.BaseApp.*.xml",
+            "rm -rfv $(readlink -f \"$0\")"
+          ]
+        },
         {
           "type": "archive",
           "url": "https://github.com/qtwebkit/qtwebkit/releases/download/qtwebkit-5.212.0-alpha4/qtwebkit-5.212.0-alpha4.tar.xz",
