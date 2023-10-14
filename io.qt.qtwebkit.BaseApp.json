@@ -23,9 +23,10 @@
       "config-opts": [
         "-DCMAKE_BUILD_TYPE=Release",
         "-DCMAKE_INSTALL_LIBDIR=lib",
-        "-DPORT=Qt"
+        "-DPORT=Qt",
+        "-DENABLE_NETSCAPE_PLUGIN_API=ON",
+        "-DENABLE_PRINT_SUPPORT=ON"
       ],
-      "make-args": [ "-j8", "-l10" ],
       "post-install": [
         "mv /app/mkspecs /app/lib",
         "install -Dm644 ../io.qt.qtwebkit.BaseApp.metainfo.xml -t /app/share/metainfo",
