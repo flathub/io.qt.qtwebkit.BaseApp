@@ -22,7 +22,6 @@
       "builddir": true,
       "config-opts": [
         "-DCMAKE_BUILD_TYPE=Release",
-        "-DCMAKE_INSTALL_LIBDIR=lib",
         "-DPORT=Qt",
         "-DENABLE_NETSCAPE_PLUGIN_API=ON",
         "-DENABLE_PRINT_SUPPORT=ON"
