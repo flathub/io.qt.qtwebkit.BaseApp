@@ -2,7 +2,7 @@
   "id": "io.qt.qtwebkit.BaseApp",
   "runtime": "org.kde.Platform",
   "sdk": "org.kde.Sdk",
-  "runtime-version": "5.15-23.08",
+  "runtime-version": "5.15-24.08",
   "separate-locales": false,
   "modules": [
     {
