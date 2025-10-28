@@ -2,12 +2,18 @@
   "id": "io.qt.qtwebkit.BaseApp",
   "runtime": "org.kde.Platform",
   "sdk": "org.kde.Sdk",
-  "runtime-version": "5.15-24.08",
+  "runtime-version": "5.15-25.08",
   "separate-locales": false,
   "modules": [
     {
       "name": "woff2",
       "buildsystem": "cmake-ninja",
+      "build-options": {
+          "cxxflags": "-include cstdint"
+      },
+      "config-opts": [
+          "-DCMAKE_POLICY_VERSION_MINIMUM=3.5"
+      ],
       "sources": [
         {
           "type": "archive",
@@ -15,6 +21,28 @@
           "sha256": "69051ab0c28c52ddbe7f4efe422e9eee03c9a9c4fa1e5a8a3876b868314f2c8c"
         }
       ]
+    },
+    {
+        "name": "ruby",
+        "config-opts": [
+            "--enable-shared"
+        ],
+        "build-options": {
+            "cflags": "-std=c17"
+        },
+        "cleanup": [
+            "*"
+        ],
+        "post-install": [
+            "cp /usr/lib/${FLATPAK_ARCH}-linux-gnu/libyaml-0.so* ${FLATPAK_DEST}/lib"
+        ],
+        "sources": [
+            {
+                "type": "archive",
+                "url": "https://cache.ruby-lang.org/pub/ruby/3.1/ruby-3.1.2.tar.gz",
+                "sha256": "61843112389f02b735428b53bb64cf988ad9fb81858b8248e22e57336f24a83e"
+            }
+        ]
     },
     {
       "name": "qtwebkit",
